@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSOMI</title>
+
+   <!-- Google Fonts: Nunito Sans y Caveat Brush con varios pesos -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush:wght@400;500;600;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Nuestro CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/images/osonuevosolo.png">
+
+
+
+</head>
+
+<body>
+
+<header>
+  <!-- ================= NAV ================= -->
+  <nav class="navbar navbar-expand-xl navbar-light bg-white shadow-none">
+    <div class="container px-4 px-xl-5">
+
+      <!-- Logo -->
+      <a class="navbar-brand shadow-none " href="#">
+        <img src="assets/images/Sin título-1.png" alt="OSOMI" height="50">
+      </a>
+
+      <!-- Menu desktop -->
+      <ul class="navbar-nav ms-auto d-none d-xl-flex">
+        <li class="nav-item"><a class="nav-link " href="#inicio">Inicio</a></li>
+        <li class="nav-item mb-3"><a class="nav-link" href="#tamanos">Tamaños</a></li>
+        <li class="nav-item"><a class="nav-link" href="#que-es-osomi">Qué es Osomi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
+        <li class="nav-item"><a class="nav-link" href="#encargos">Encargos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <!-- Botón hamburger -->
+      <button class="navbar-toggler border-0 d-xl-none shadow-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#menuMobile"
+              aria-label="Abrir menú">
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+             viewBox="0 0 24 24" stroke-width="1.8"
+             stroke="currentColor" class="icon-menu">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
+        </svg>
+      </button>
+
+    </div>
+  </nav>
+</header>
+
+<!-- ================= MENU MOBILE ================= -->
+<div class="offcanvas offcanvas-end d-xl-none shadow-none" tabindex="-1" id="menuMobile">
+  <div class="offcanvas-header">
+     <!-- Logo -->
+      <a class="navbar-brand " href="#">
+        <img src="assets/images/Sin título-1.png" alt="OSOMI" height="50">
+      </a>
+
+    <button type="button" class="border-0 bg-transparent shadow-none"
+            data-bs-dismiss="offcanvas" aria-label="Cerrar menú">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+           viewBox="0 0 24 24" stroke-width="1.8"
+           stroke="currentColor" class="icon-menu">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column justify-content-center text-center">
+    <ul class="navbar-nav fs-4">
+      <li class="nav-item mb-3"><a class="nav-link active" href="#inicio">Inicio</a></li>
+      <li class="nav-item mb-3"><a class="nav-link" href="#tamanos">Tamaños</a></li>
+       <li class="nav-item mb-3"><a class="nav-link" href="#que-es-osomi">Qué es Osomi</a></li>
+      <li class="nav-item mb-3"><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
+      <li class="nav-item mb-3"><a class="nav-link" href="#encargos">Encargos</a></li>
+      <li class="nav-item mb-3"><a class="nav-link" href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</div>
+<script>
+  const menuMobile = document.getElementById('menuMobile');
+
+  menuMobile.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault(); // evita que el enlace navegue de inmediato
+      const targetId = link.getAttribute('href'); // "#inicio", etc.
+
+      const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(menuMobile);
+      offcanvas.hide(); // cierra el menú
+
+      // Espera a que el offcanvas termine de cerrarse
+      menuMobile.addEventListener('hidden.bs.offcanvas', function handler() {
+        // Navega a la sección después de cerrar
+        if (targetId.startsWith('#')) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+        menuMobile.removeEventListener('hidden.bs.offcanvas', handler);
+      });
+    });
+  });
+</script>
+
+
+
+<main>
+  <!-- CONTENIDO -->
+   <!-- ================= SECCIÓN HERO ================= -->
+<section id="inicio" class="hero section-yellow py-5  px-3  px-md-5" >
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      
+      <!-- TEXTO -->
+      <div class="col-md-6 hero-text mb-4 mb-md-0 ">
+        <h1 class="fw-bold mb-3  mb-4">
+       El dibujo de un niño, convertido en un recuerdo para toda la vida.
+        </h1>
+        <p class=" mb-4">
+          Damos vida a dibujos reales de niños a través de peluches hechos a mano, respetando fielmente cada trazo y cada idea original. No los cambiamos: los hacemos realidad.
+        </p>
+        <a href="#contacto" class="btn btn-hero ">
+         Contactanos
+        </a>
+      </div>
+
+<!-- IMAGEN -->
+<div class="col-md-6 hero-image text-center ">
+  <img src="assets/images/nino-con-un-dibujo-de-casco-de-bombero.jpg" 
+       alt="Peluche personalizado" 
+       class="img-fluid rounded shadow"
+       style="border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- TAMAÑOS DE OSITOS -->
+<section id="tamanos" class="py-5 px-3 text-center" style="background-color: #FFF5F0; ">
+  <div class="container">
+    <h2 class="mb-4 fs-1 text-uppercase" > Tamaños</h2>
+    <p class="mb-5" >
+      Cada peluche tiene su propia magia. Elegí el que mejor se adapte al abrazo que quieras dar.
+    </p>
+
+    <div class="row justify-content-center g-4">
+     <!-- PEQUEÑO -->
+<div class="col-md-4 py-3"> 
+  <div class="card h-100 shadow rounded-4 p-3" 
+       style="background-color:#FCE3E9; border: 2px solid #ffffff; cursor: pointer;">
+    <img src="assets/images/ositomedidas.png" 
+         class="card-img-top mx-auto d-block mb-3 rounded"
+         alt="Osito pequeño"
+         style="width: 150px;">
+    <h3>PEQUEÑO – 25 CM</h3>
+    <p>
+      Un detalle dulce y perfecto para regalar. Ideal para pequeños abrazos llenos de ternura.
+    </p>
+  </div>
+</div>
+
+    <!-- MEDIANO -->
+  <div class="col-md-4 py-3"> 
+    <div class="card h-100 shadow rounded-4 p-3 popular-card" 
+         style="background-color:#FFF1A8; border: 2px solid #ffffff; cursor: pointer;">
+      <!-- Badge Popular -->
+      <span class="popular-badge">POPULAR</span>
+      <img src="assets/images/ositomedidas.png" 
+           class="card-img-top mx-auto d-block mb-3 rounded"
+           alt="Osito mediano"
+           style="width: 180px;">
+      <h3 class="text-center">MEDIANO – 35 CM</h3>
+      <p class="text-center">
+        El tamaño ideal: abrazable y súper tierno. Perfecto para acompañar cualquier momento especial.
+      </p>
+    </div>
+  </div>
+       <!-- GRANDE -->
+  <div class="col-md-4 py-3"> 
+    <div class="card h-100 shadow rounded-4 p-3" 
+         style="background-color:#C7E4EE; border: 2px solid #ffffff; cursor: pointer;">
+      <img src="assets/images/ositomedidas.png" 
+           class="card-img-top mx-auto d-block mb-3 rounded"
+           alt="Osito grande"
+           style="width: 200px;">
+      <h3 class="text-center">GRANDE – 50 CM</h3>
+      <p class="text-center">
+        El preferido para sorpresas especiales y abrazos enormes.
+      </p>
+    </div>
+  </div>
+    </div>
+  </div>
+</section>
+<!-- ================= SEPARADOR ================= -->
+<section class="py-5" style="background-color: #06D6A0;">
+  <div class="container">
+    <div class="row align-items-center text-center">
+      
+      <!-- Imagen izquierda -->
+      <div class="col-2 d-flex justify-content-center">
+        <img src="assets/images/corazon.png" 
+             alt="Corazón izquierda" 
+             class="img-fluid" 
+             style="width: 90px; height: auto;">
+      </div>
+
+      <!-- Texto central -->
+      <div class="col-8">
+        <h2 class="text-white fw-bold mb-3 fs-1">
+          No es un peluche más.
+        </h2>
+        <p class="text-white fs-3">
+          Es un recuerdo que crece con ellos.
+        </p>
+      </div>
+
+      <!-- Imagen derecha -->
+      <div class="col-2 d-flex justify-content-center">
+        <img src="assets/images/sol.png" 
+             alt="Corazón derecha" 
+             class="img-fluid" 
+             style="width: 100px; height: auto;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- =================  QUÉ ES OSOMI ================= -->
+<section id="que-es-osomi" class="py-5  px-3  px-md-5" style="background-color: #FFF1A8;">
+  <div class="container">
+    <div class="row align-items-center">
+    
+
+<!-- IMAGEN -->
+<div class="col-lg-6 text-center">
+  <img src="assets/images/osonuevosolo.png" 
+       alt="Osomi" 
+       class="img-fluid p-5"
+       style="width: 500px;" >
+</div>
+
+
+  
+   <!-- TEXTO -->
+<div class="col-lg-6 d-flex flex-column justify-content-start mb-4 mb-lg-0 py-3 px-3 pt-3">
+  <h2 class="fw-bold mb-4 fs-1">QUÉ ES OSOMI</h2>
+  <p class="fs-5 mb-3">
+    Osomi nace para que esos dibujos que hoy viven en hojas sueltas, heladeras o carpetas no se pierdan con el tiempo.
+  </p>
+  <p class="fs-5 mb-0">
+   No es solo un osito. Es un recuerdo hecho realidad a partir de la imaginación de un niño. Cada Osomi nace de una historia única y se convierte en un tesoro familiar imposible de comparar con un producto en serie.
+    
+  </p>
+</div>
+
+    </div>
+  </div>
+</section>
+<!-- ================= SECCIÓN PARA QUIÉN ES ================= -->
+<section class="py-5 px-3 px-md-5 " style="background-color: #A9E8D2">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- TEXTO -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-4 fs-1 text-uppercase ">Para quién es</h2>
+        <ul class="fs-5" style="list-style-type: disc; padding-left: 1.5rem;">
+          <li class="mb-2">
+            Padres que quieren conservar la magia de la infancia de sus hijos en un recuerdo tangible.
+          </li>
+          <li class="mb-2">
+            Abuelos que buscan un regalo lleno de sentido y emoción, que realmente toque el corazón.
+          </li>
+          <li class="mb-2">
+            Familias que valoran lo auténtico, lo hecho a mano y los momentos que se recuerdan para siempre.
+          </li>
+        </ul>
+      </div>
+
+      <!-- IMAGEN -->
+      <div class="col-lg-6 text-center">
+        <img src="assets/images/full-shot-happy-family-sitting-couch.jpg" 
+             alt="Decoración Osomi" 
+             class="img-fluid rounded shadow"
+             style="max-width: 80%; height: auto; border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEPARADOR CONTACTANOS ================= -->
+<section class="py-5" id="contacto" style="background-color:  #118AB2">
+  <div class="container">
+    <div class="row align-items-center text-center">
+      
+      <!-- Imagen izquierda -->
+      <div class="col-2 d-flex justify-content-center">
+        <img src="assets/images/corazon.png" 
+             alt="Corazón izquierda" 
+             class="img-fluid" 
+             style="width: 90px; height: auto;">
+      </div>
+
+      <!-- Texto central -->
+      <div class="col-8">
+        <h2 class="text-white fw-bold mb-3 fs-1">
+          Contactanos
+        </h2>
+        <p class="text-white fs-4">
+          Si querés transformar un dibujo en un Osomi o tenés alguna consulta, escribinos.
+        </p>
+
+       <!-- Redes sociales -->
+        <div class="d-flex justify-content-center gap-4 mt-3">
+          <a href="https://www.instagram.com/tienda_osomi/" target="_blank" style="color: #ffffff; font-size: 2.5rem;">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" style="color: #ffffff; font-size: 2.5rem;">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Imagen derecha -->
+      <div class="col-2 d-flex justify-content-center">
+        <img src="assets/images/sol.png" 
+             alt="Sol derecha" 
+             class="img-fluid" 
+             style="width: 100px; height: auto;">
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--================= SECCIÓN CÓMO FUNCIONA ================= -->
+<section id="como-funciona" class="py-5" style="background-color: #FCE3E9;">
+  <div class="container text-center pb-5">
+
+    <!-- Título -->
+    <div class="row mb-3 justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="fw-bold fs-1">CÓMO FUNCIONA</h2>
+        <p>
+          Cada Osomi se realiza de manera artesanal, con tiempo, atención al detalle
+          y respeto por el dibujo original.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pasos -->
+    <div class="row justify-content-center align-items-stretch">
+
+      <!-- Paso 1 -->
+      <div class="col-10 mx-auto col-md-6 col-lg-3 mb-4 mb-lg-0">
+        <div class="card border-0 shadow-sm p-4 h-100"
+             style="border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+          <img src="assets/images/hongo1_.jpg" class="mb-3" alt="">
+          <p>Nos enviás el dibujo de tu niño.</p>
+        </div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="col-10 mx-auto col-md-6 col-lg-3 mb-4 mb-lg-0">
+        <div class="card border-0 shadow-sm p-4 h-100"
+             style="border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+          <img src="assets/images/hongo2_.jpg" class="mb-3" alt="">
+          <p>Adaptamos el dibujo para llevarlo a peluche.</p>
+        </div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="col-10 mx-auto col-md-6 col-lg-3 mb-4 mb-lg-0">
+        <div class="card border-0 shadow-sm p-4 h-100"
+             style="border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+          <img src="assets/images/hongo3_.jpg" class="mb-3" alt="">
+          <p>Confeccionamos a mano, pieza por pieza.</p>
+        </div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="col-10 mx-auto col-md-6 col-lg-3 ">
+        <div class="card border-0 shadow-sm p-4 h-100"
+             style="border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+          <img src="assets/images/hongo4_.jpg" class="mb-3" alt="">
+          <p>Recibís un recuerdo para siempre.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!--================= SECCIÓN ENCARGOS ================= -->
+<section id="encargos" class="py-5" style="background-color: #FFF1A8;">
+  <div class="container">
+    
+    <div class="row align-items-center g-5 px-3 py-5">
+      <!-- IMAGEN -->
+<div class="col-lg-6 text-center">
+  <img src="assets/images/high-angle-box-with-teddy-bear-being-prepared-be-shipped.jpg" 
+       alt="Decoración Osomi" 
+       class="img-fluid rounded shadow w-100 w-lg-80"
+       style="height: auto; border-radius: 15px; border: 2px solid #ffffff; padding: 3px;">
+</div>
+
+
+      <!-- Texto -->
+      <div class="col-lg-6 text-lg-start">
+        <h2 class="fw-bold mb-4" >ENCARGOS</h2>
+        
+        <p class="mb-5">
+          Trabajamos únicamente por encargo y con cupos limitados.<br>
+          Cada peluche se confecciona a mano en Argentina, cuidando cada detalle.<br>
+          Consultá disponibilidad, tiempos de entrega y valores.
+        </p>
+
+      <a href="#contacto" class="btn btn-hero">
+  Contactanos
+</a>
+
+      </div>
+
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+ 
+<footer class="pt-5" >
+  
+
+  <div class="container">
+
+    <div class="row align-items-center text-center text-lg-start mb-4">
+
+     <!-- Logo -->
+<div class="col-lg-4 mb-3 mb-lg-0 text-center text-lg-start ">
+ 
+<div class="footer-text mt-3 px-3">
+  <p>Transformamos dibujos en amigos que se pueden abrazar. </p>
+  <p>Hecho a mano en Argentina.</p>
+</div>
+
+</div>
+
+
+  <!-- Navegación en columna -->
+
+<div class="col-lg-4 mb-3 mb-lg-0">
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-unstyled mb-0 footer-nav">
+        <li><a href="#inicio" class="text-decoration-none">Inicio</a></li>
+        <li><a href="#tamanos" class="text-decoration-none">Tamaños</a></li>
+        <li><a href="#que-es-osomi" class="text-decoration-none">Qué es Osomi</a></li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="list-unstyled mb-0 footer-nav">
+        <li><a href="#como-funciona" class="text-decoration-none">Cómo funciona</a></li>
+        <li><a href="#encargos" class="text-decoration-none">Encargos</a></li>
+        <li><a href="#contacto" class="text-decoration-none">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Logo arriba y redes abajo -->
+<div class="col-lg-4 d-flex flex-column align-items-center align-items-lg-end gap-3">
+  
+  <!-- Logo -->
+  <a href="#inicio">
+    <img src="assets/images/Sin título-1.png" 
+         alt="Osomi" 
+         class="img-fluid " 
+         style="max-width: 150px;"> 
+  </a>
+
+  <!-- Redes sociales -->
+  <div class="d-flex gap-3 mt-2">
+    <a href="https://www.instagram.com/tienda_osomi/" target="_blank" style="color: #EF476F; font-size: 2rem;">
+  <i class="bi bi-instagram"></i>
+</a>
+
+    <a href="https://www.facebook.com/" target="_blank" style="color: #EF476F; font-size: 2rem;">
+      <i class="bi bi-facebook"></i>
+    </a>
+  </div>
+
+</div>
+
+
+    </div>
+
+  </div>
+<div class="w-100" style="height: 5px; background-color: #06D6A0;"></div>
+  <!-- Sección inferior: Imagen decorativa -->
+  
+
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

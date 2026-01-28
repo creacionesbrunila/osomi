@@ -1,0 +1,160 @@
+/* ===== TIPOGRAFÍAS ===== */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #118AB2;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Caveat Brush', cursive;
+  font-weight: 600;
+  color:#EF476F;
+  line-height: 1.2;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  padding: 1.2rem 0;
+  background-color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-family: 'Nunito Sans', cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #06D6A0;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link.active {
+  color:#118AB2;
+}
+
+.icon-menu {
+  width: 36px;
+  height: 36px;
+  color: #06D6A0;
+}
+
+/* ===== MENU MOBILE ===== */
+.offcanvas-title {
+  font-family: 'Nunito Sans', cursive;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #EF476F;
+}
+
+.offcanvas-body .nav-link {
+  font-family: 'Nunito Sans', cursive;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #06D6A0;
+}
+
+.offcanvas-body .nav-link:hover,
+.offcanvas-body .nav-link:focus,
+.offcanvas-body .nav-link.active {
+  color:#118AB2;
+}
+
+
+
+/* ===== SECCIONES ===== */
+section h1 {
+  font-size: 2.5rem;
+}
+
+section p  {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  
+  line-height: 1.6;
+}
+section li {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  
+  line-height: 1.6;
+}
+
+
+/* ===== BOTONES  ===== */
+.btn {
+  font-family: 'Nunito Sans', cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color:#06D6A0; 
+  color: #fff; 
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color:#118AB2; /* azul más claro al pasar el cursor */
+  color: #fff; /* el texto sigue blanco */
+}
+.section-yellow {
+  background-color: #FFF1A8;
+  padding: 5rem 0;
+}
+
+
+/* Hover elegante para todas las tarjetas */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Círculo "POPULAR" para la tarjeta mediana */
+.popular-card {
+  position: relative;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color:#EF476F;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8em;
+  padding: 20px 20px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* Footer - navegación */
+footer .footer-nav a {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem; /* tamaño para desktop */
+  color: #06D6A0;
+  text-decoration: none;
+}
+
+footer .footer-nav a:hover,
+footer .footer-nav a:focus {
+  color: #118AB2;
+}
+.footer-text p {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem; /* ajusta según necesites */
+  line-height: 1.6;
+  color: #118AB2; /* color Osomi, ajusta si querés otro */
+  margin-bottom: 0.5rem;
+}
