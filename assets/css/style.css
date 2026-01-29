@@ -158,3 +158,27 @@ footer .footer-nav a:focus {
   color: #118AB2; /* color Osomi, ajusta si querés otro */
   margin-bottom: 0.5rem;
 }
+ .osomi-img {
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    padding: 3px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 90%; /* tamaño en desktop */
+    height: auto;
+  }
+
+  @media (max-width: 991.98px) { /* breakpoint lg de Bootstrap */
+    .osomi-img {
+      max-width: 100%; /* tamaño en tablet y celular */
+    }
+  }
+  .osomi-png {
+  max-width: 80%; /* tamaño desktop */
+  height: auto;
+}
+
+@media (max-width: 991.98px) { /* tablet y móvil */
+  .osomi-png {
+    max-width: 100%;
+  }
+}
